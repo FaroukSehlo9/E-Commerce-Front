@@ -1,0 +1,19 @@
+<div class="min-vh-100 d-flex flex-column">
+  <app-navbar></app-navbar>
+
+  <div class="d-flex flex-grow-1">
+    <aside class="bg-light border-end d-none d-md-block" style="width: 250px;">
+      <app-sidebar></app-sidebar>
+    </aside>
+
+    <div class="d-flex flex-column flex-grow-1">
+
+      <main class="p-4 flex-grow-1 bg-light-subtle">
+        <router-outlet></router-outlet>
+      </main>
+
+      <app-footer></app-footer>
+
+    </div>
+  </div>
+</div>

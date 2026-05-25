@@ -1,0 +1,51 @@
+<div class="container-fluid vh-100 d-flex align-items-center justify-content-center bg-light">
+  <div class="card shadow-lg border-0" style="width: 450px; border-radius: 15px;">
+    <div class="card-body p-5">
+      <h3 class="text-center mb-4 fw-bold text-primary">تسجيل الدخول</h3>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+        <div class="mb-3">
+          <label class="form-label fw-bold text-secondary">البريد الإلكتروني</label>
+          <input type="email" formControlName="email" class="form-control form-control-lg"
+            [class.is-invalid]="loginForm.get('email')?.touched && loginForm.get('email')?.invalid"
+            placeholder="name@example.com">
+          <div class="invalid-feedback">
+            <span *ngIf="loginForm.get('email')?.hasError('required')">هذا الحقل مطلوب</span>
+            <span *ngIf="loginForm.get('email')?.hasError('email')">يرجى إدخال بريد إلكتروني صحيح</span>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label fw-bold text-secondary">كلمة المرور</label>
+          <input type="password" formControlName="password" class="form-control form-control-lg"
+            [class.is-invalid]="loginForm.get('password')?.touched && loginForm.get('password')?.invalid"
+            placeholder="******">
+          <div class="invalid-feedback">
+            كلمة المرور يجب أن لا تقل عن 6 أحرف
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label class="form-label fw-bold text-secondary">الدخول كـ</label>
+          <select formControlName="userRole" class="form-select form-select-lg shadow-sm">
+            <option value="1">Admin</option>
+            <option value="2">Manager</option>
+            <option value="3">Customer</option>
+          </select>
+        </div>
+
+        <button type="submit" [disabled]="loginForm.invalid || isLoading"
+          class="btn btn-primary w-100 py-3 fs-5 shadow-sm mb-2">
+          <span *ngIf="isLoading" class="spinner-border spinner-border-sm me-2"></span>
+          {{ isLoading ? 'جاري التحقق...' : 'دخول' }}
+        </button>
+
+        <div *ngIf="errorMessage" class="alert alert-danger mt-3 py-2 text-center animate-fade">
+          <i class="bi bi-exclamation-triangle-fill me-2"></i> {{errorMessage}}
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

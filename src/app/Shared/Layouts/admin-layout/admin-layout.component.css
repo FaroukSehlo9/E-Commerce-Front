@@ -1,0 +1,10 @@
+main {
+    overflow-y: auto;
+    max-height: calc(100vh - 56px);
+}
+
+aside {
+    position: sticky;
+    top: 56px;
+    z-index: 100;
+}

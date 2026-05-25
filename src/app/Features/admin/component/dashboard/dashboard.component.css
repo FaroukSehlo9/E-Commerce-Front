@@ -1,0 +1,12 @@
+.card {
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.border-dashed {
+    border-style: dashed !important;
+}

@@ -1,0 +1,70 @@
+/* الحاوية الرئيسية */
+.about-container {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+/* العنوان الرئيسي */
+h1 {
+    color: #0078d4; /* لون الـ .NET الشهير */
+    letter-spacing: -1px;
+}
+
+/* النص التعريفي */
+.bio-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* مهاراتك - Chips */
+.badge {
+    font-weight: 500;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: default;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.badge:hover {
+    transform: translateY(-5px);
+    background-color: #dd0031 !important; /* لون Angular عند الوقوف بالماوس */
+    color: white;
+}
+
+/* كارت المشروع الحالي */
+.card {
+    border: none;
+    border-radius: 15px;
+    border-left: 5px solid #dd0031; /* علامة Angular */
+    transition: shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+/* الروابط والتواصل */
+.social-btns .btn {
+    border-radius: 20px;
+    padding: 8px 25px;
+    font-weight: 600;
+}
+
+/* الفوتر */
+footer {
+    border-top: 1px solid #dee2e6;
+    background-color: #ffffff;
+    padding-bottom: 20px;
+}
+
+/* إضافة لمسة احترافية للنصوص العربية */
+[dir="rtl"] .bio-text {
+    text-align: justify;
+    text-justify: inter-word;
+}
