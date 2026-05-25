@@ -9,7 +9,11 @@ export const authGuard: CanActivateFn = (route, state) => {
   if (authService.isLoggedIn()) {
     return true; // مسموح له يدخل
   } else {
-    router.navigate(['/login']); // ارجع على صفحة اللوجن
+    // التعديل: نحفظ الـ URL اللي كان عايز يروح له (اختياري بس مفيد جداً)
+    // router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
+
+    // الحل المباشر بتاعك:
+    router.navigate(['/login']);
     return false;
   }
 };
