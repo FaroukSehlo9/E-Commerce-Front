@@ -1,15 +1,14 @@
 <div class="d-flex flex-column flex-shrink-0 p-3 bg-light border-end" style="height: 100vh;">
   <ul class="nav nav-pills flex-column mb-auto">
-    <li class="nav-item">
-      <a routerLink="/admin/dashboard" routerLinkActive="active" class="nav-link mb-2" style="cursor: pointer;">
-        <i class="fa fa-dashboard me-2"></i> لوحة التحكم
-      </a>
-      <a routerLink="/admin/Prouduct" routerLinkActive="active" class="nav-link mb-2" style="cursor: pointer;">
-        <i class="fa fas fa-box me-2"></i> المنتجات
+    <li class="nav-item mb-2" *ngFor="let item of menuItems">
+      <a
+        class="nav-link"
+        [routerLink]="['/admin', item.path]"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}"> {{ item.title }}
       </a>
     </li>
-
-    </ul>
+  </ul>
 
   <hr>
   <div class="small text-muted text-center">الإصدار 1.0.0</div>

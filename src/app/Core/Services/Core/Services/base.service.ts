@@ -20,9 +20,10 @@ export abstract class BaseService<T> {
   protected abstract readonly controllerName: string;
 
   /** 1. جلب الكل **/
-  getAll(): Observable<GeneralResponse<T[]>> {
-    return this.http.get<GeneralResponse<T[]>>(`${this.baseUrl}/${this.controllerName}/GetAll`);
-  }
+ getAll(): Observable<GeneralResponse<T[]>> {
+  const url = `${this.baseUrl}/${this.controllerName}/GetAll`;
+  return this.http.get<GeneralResponse<T[]>>(url);
+}
 
   /** 2. جلب عنصر واحد بالـ ID (Query Parameter: ?Id=guid) **/
   getById(id: string): Observable<GeneralResponse<T>> {
